@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- My stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- My fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=Edu+QLD+Beginner:wght@400;600;700&family=Edu+TAS+Beginner:wght@700&family=Montserrat:wght@100;600&family=Mouse+Memoirs&family=Poppins:ital,wght@0,500;1,200&family=Quicksand:wght@300&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+
     <title>Rock Paper Scissors</title>
 </head>
-<body>
+
+<body id="main">
     <h1>ROCK PAPER SCISSORS</h1>
 
+    <p>This is a best of 5 rock paper scisssors game, which means whoever gets to 3 first between you and the PC gets the price.
+        If you are ready to try your luck start.
+    </p>
+
+    <h3>Choose rock, paper or scissors</h3>
+
     <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button id="rock">✊</button>
+        <button id="paper">🖐</button>
+        <button id="scissors">✌️</button>
     </div>
-    
+
     <div class="results">
-        
+
     </div>
 
     <div class="score">
+        <h2>Scores</h2>
         <div>
-           <h3>User: <span class="myScore"></span></h3> 
+            <h3>User: <span class="myScore"></span></h3>
         </div>
-        
+
         <div>
-           <h3>PC: <span class="thePCScore"></span></h3> 
+            <h3>PC: <span class="thePCScore"></span></h3>
         </div>
 
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

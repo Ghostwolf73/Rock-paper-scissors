@@ -1,0 +1,32 @@
+*{
+    text-align: center;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    background-color: black;
+    color: #ffc42e;
+}
+
+h1 {
+    padding: 60px;
+}
+
+.buttons button{
+    height: 80px;
+    width: 80px;
+    font-size: 3rem;
+    margin: 40px;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    transition: .300s;
+    transform: scale(1.6);
+}
+
+.results-text{
+    text-align: center;
+    margin: 40px;
+    font-size: 5rem;
+    color: red;
+}

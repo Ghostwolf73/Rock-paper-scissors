@@ -1,18 +1,21 @@
-let choices = ["rock", "paper", "scissors"];
-let i = 5;
+// let i = 5;
 
-let computerChoice = getComputerChoice(choices);
+let computerChoice = getComputerChoice();
 let playerChoice;
 
 let computerWins = 0;
 let userWin = 0;
 
-function getComputerChoice(arr) {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-
-    const item = arr[randomIndex];
-
-    return item;
+function getComputerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3)
+    switch (randomNumber) {
+        case 0:
+            return 'rock'
+        case 1:
+            return 'paper'
+        case 2:
+            return 'scissors'
+    }
 }
 
 function play(pc, user) {
@@ -21,96 +24,39 @@ function play(pc, user) {
     pc = computerChoice;
     user = playerChoice;
 
-    if (pc === "rock" && user === "paper") {
+    if (pc === "rock" && user === "paper" || pc === "paper" && user === "scissors" || pc === "scissors" && user === "rock") {
         const resultTest = document.querySelector(".results");
         resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you win`;
 
         const score = document.querySelector(".myScore");
-        score.textContent = `${userWin++}`;
+        score.textContent = `${++userWin}`;
 
         const compScore = document.querySelector(".thePCScore")
         compScore.textContent = `${computerWins}`;
 
-        // userWin++
     }
-    else if (pc === "rock" && user === "scissors") {
+    else if (pc === "rock" && user === "scissors" || pc === "paper" && user === "rock" || pc === "scissors" && user === "paper") {
         const resultTest = document.querySelector(".results");
         resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you lose`;
 
         const compScore = document.querySelector(".thePCScore");
-        compScore.textContent = `${computerWins++}`;
+        compScore.textContent = `${++computerWins}`;
 
         const score = document.querySelector(".myScore");
         score.textContent = `${userWin}`;
-
-        // computerWins++
     }
-    else if (pc === "rock" && user === "rock") {
+    else if (pc === user) {
         const resultTest = document.querySelector(".results");
         resultTest.textContent = 'Draw';
     }
 
-    else if (pc === "paper" && user === "scissors") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you win`;
 
-        const score = document.querySelector(".myScore");
-        score.textContent = `${userWin++}`
-
-        const compScore = document.querySelector(".thePCScore")
-        compScore.textContent = `${computerWins}`
-        // userWin++
-    }
-    else if (pc === "paper" && user === "rock") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you lose`;
-
-        const score = document.querySelector(".myScore");
-        score.textContent = `${computerWins++}`
-
-        const compScore = document.querySelector(".thePCScore")
-        compScore.textContent = `${userWin}`
-
-        // computerWins++
+    if (computerWins == 3) {
+        alert(`computer wins with ${computerWins}, you lose`);
     }
 
-    else if (pc === "paper" && user === "paper") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = 'Draw';
-    }
-
-    else if (pc === "scissors" && user === "scissors") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = 'Draw';
-    }
-    else if (pc === "scissors" && user === "rock") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you win`;
-
-        const compScore = document.querySelector(".thePCScore");
-
-        compScore.textContent = `${userWin++}`
-
-        const score = document.querySelector(".myScore");
-        score.textContent = `${computerWins}`
-
-        // userWin++
-    }
-
-    else if (pc === "scissors" && user === "paper") {
-        const resultTest = document.querySelector(".results");
-        resultTest.textContent = `PC chose ${computerChoice} and you selected ${playerChoice} you lose`;
-
-        const score = document.querySelector(".myScore");
-        score.textContent = `${computerWins++}`
-
-        const compScore = document.querySelector(".thePCScore")
-        compScore.textContent = `${userWin}`
-        
-        // computerWins++
-    }
-    else {
-        console.log('invalid');
+    else if (userWin == 3) {
+        alert(`You win with ${userWin}`);
     }
 
 }
@@ -118,30 +64,27 @@ function play(pc, user) {
 let rockClick = document.querySelector('#rock');
 rockClick.addEventListener('click', () => {
     playerChoice = 'rock';
-    play(computerChoice, playerChoice);
+    play();
 });
 
 let paperClick = document.querySelector('#paper');
 paperClick.addEventListener('click', () => {
     playerChoice = 'paper';
-    play(computerChoice, playerChoice);
+    play();
 
 });
 
 let scissorsClick = document.querySelector('#scissors');
 scissorsClick.addEventListener('click', () => {
     playerChoice = 'scissors';
-    play(computerChoice, playerChoice);
+    play();
 });
 
 
-// function game() {
-//     for (let i = 0; i < 5; i++) {
 
-//         play();
-//         console.log(`computer ${computerWins} and user ${userWin}`);
-//     }
-// }
+
+
+console.log(computerWins, userWin);
 
 // game()
 
