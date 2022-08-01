@@ -1,5 +1,3 @@
-// let i = 5;
-
 let computerChoice = getComputerChoice();
 let playerChoice;
 
@@ -21,7 +19,7 @@ function getComputerChoice() {
 function play(pc, user) {
 
 
-    pc = computerChoice;
+    pc = getComputerChoice();
     user = playerChoice;
 
     if (pc === "rock" && user === "paper" || pc === "paper" && user === "scissors" || pc === "scissors" && user === "rock") {
@@ -50,13 +48,37 @@ function play(pc, user) {
         resultTest.textContent = 'Draw';
     }
 
-
     if (computerWins == 3) {
-        alert(`computer wins with ${computerWins}, you lose`);
+        let main = document.querySelector(".main");
+        main.classList.add('hide');
+
+        let newPage = document.querySelector('#results-page');
+        newPage.textContent = 'You lose 💔';
+        newPage.classList.remove('hide');
+        newPage.classList.add('show');
+
+        let button = document.createElement('button');
+        button.innerHTML = "Try Again";
+        button.onclick="window.location.reload();"
+        button.classList.add("restart-button")
+        newPage.appendChild(button);
     }
 
     else if (userWin == 3) {
-        alert(`You win with ${userWin}`);
+        let main = document.querySelector(".main");
+        main.classList.add('hide');
+
+        let newPage = document.querySelector('#results-page');
+        newPage.textContent = 'You win 🥳';
+        newPage.classList.remove('hide');
+        newPage.classList.add('show');
+
+        let button = document.createElement('button');
+        button.innerHTML = "Play Again";
+        button.onclick="window.location.reload();"
+        button.classList.add("restart-button")
+        newPage.appendChild(button);
+        
     }
 
 }
@@ -80,19 +102,3 @@ scissorsClick.addEventListener('click', () => {
     play();
 });
 
-
-
-
-
-console.log(computerWins, userWin);
-
-// game()
-
-// if (computerWins > userWin){
-//     console.log("Computer wins");
-// } else if (userWin > computerWins){
-//     console.log("You win");
-// } 
-// else {
-//     console.log('It was a draw, you can try again');
-// }

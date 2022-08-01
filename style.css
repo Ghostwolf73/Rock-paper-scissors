@@ -24,9 +24,20 @@ h1 {
     transform: scale(1.6);
 }
 
-.results-text{
-    text-align: center;
-    margin: 40px;
-    font-size: 5rem;
-    color: red;
+.hide {
+    display: none;
 }
+
+#results-page{
+    font-size: 6rem;
+}
+
+.show {
+    margin-top: 150px;
+
+}
+
+.restart-button {
+    background-color: red;
+}
+
