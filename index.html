@@ -20,19 +20,31 @@
 </head>
 
 <body>
+    <div class="start-game">
 
-    <div id="results-page" class="hide">
-       <p>hdudhf suf sufidndjis idisaisi i</p>
+        <h1 data-text="Welcome..."></h1>
+
+        <p>Think you can beat my AI in rock, paper, scissor?</p>
+        <p>Well you can try your luck!</p>
+        <p>The rules are simple, you pick rock✊, paper🖐 or scissors✌️ then the AI picks it's own</p>
+        <p>The first to reach 4 wins takes the prize</p>
+        <p>Ready? let's go!</p>
+
+        <button class="start">Start Game</button>
+        
     </div>
-    <div class="main">
-        <h1>ROCK PAPER SCISSORS</h1>
+    <div class="main hide">
 
-        <p>This is a best of 5 rock paper scisssors game, which means whoever gets to 3 first between you and the PC
-            gets the price.
-            If you are ready to try your luck start.
-        </p>
-
-        <h3>Choose rock, paper or scissors</h3>
+        <div class="wavy">
+            <span style="--i:1">Choose </span>
+            <span style="--i:2"> Rock, </span>
+            <span style="--i:3"> Paper </span>
+            <span style="--i:4"> Or </span>
+            <span style="--i:5"> Scissors </span>
+            <span style="--i:6">.</span>
+            <span style="--i:7">.</span>
+            <span style="--i:8">.</span>
+        </div>
 
         <div class="buttons">
             <button id="rock">✊</button>
@@ -45,13 +57,13 @@
         </div>
 
         <div class="score">
-            <h2>Scores</h2>
+            <h2><u>Scores</u></h2>
             <div>
-                <h3>User 👨‍🦱: <span class="myScore"></span></h3>
+                <h3>User 👨‍🦱: <span class="myScore">?</span></h3>
             </div>
 
             <div>
-                <h3>PC 🤖: <span class="thePCScore"></span></h3>
+                <h3>PC 🤖: <span class="thePCScore">?</span></h3>
             </div>
 
         </div>

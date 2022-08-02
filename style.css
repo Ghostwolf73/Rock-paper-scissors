@@ -1,12 +1,116 @@
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
     font-family: 'Edu NSW ACT Foundation', cursive;
-    background-color: black;
-    color: #ffc42e;
+    color: #01fe87;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #252839;
+}
+
+.start-game h1{
+    position: relative;
+    font-size: 6vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}
+
+.start-game h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90%{
+        width: 100%;
+    }
+}
+
+.start-game {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.start-game button{
+    background-color: #01fe87;
+    color: #252839;
+    padding: 10px;
+    border-radius: 5%;
+    border-style: solid;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.start-game button:hover{
+    transition: .300s;
+    transform: scale(1.4);
+}
+
+.start-game p{
+    font-size: 1.2rem;
+}
+
+.main {
+    padding-top: 80px;
+}
+
+.wavy {
+    position: relative;
+  }
+  .wavy span {
+    position: relative;
+    display: inline-block;
+    padding: 7px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #01fe87;
+    text-transform: uppercase;
+    animation: flip 3s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+
 
 h1 {
     padding: 60px;
+}
+
+.score h2{
+    font-size: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+.score h3{
+    padding: 20px;
+    font-size: 2rem;
 }
 
 .buttons button{
@@ -28,16 +132,42 @@ h1 {
     display: none;
 }
 
-#results-page{
-    font-size: 6rem;
+.results-page {
+    margin-top: 100px;
 }
 
-.show {
-    margin-top: 150px;
-
+.results h2 {
+    font-weight: bold;
+    font-size: 2rem;
 }
 
-.restart-button {
-    background-color: red;
+.results-page h1 {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.results-page p {
+    font-size: 2rem;
+}
+
+.results-page a{
+    text-decoration: none;
+    background-color: transparent;
+    color: #252839;
+}
+
+.results-page button {
+    border-style: none;
+    background-color: #01fe87;
+    color: #252839;
+    border-radius: 4%;
+    font-size: 1.5rem;
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.results-page button:hover{
+    transition: .300s;
+    transform: scale(1.6);
 }
 

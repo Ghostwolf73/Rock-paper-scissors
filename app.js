@@ -4,6 +4,11 @@ let playerChoice;
 let computerWins = 0;
 let userWin = 0;
 
+const clapAudio = new Audio('./sounds/cheering-and-clapping-crowd-2-6029.mp3');
+const awwwSound = new Audio('./sounds/Crowd Aww - Sound Effect.mp3');
+const startSound = new Audio('./sounds/start.mp3');
+const selectSound = new Audio('./sounds/select.mp3');
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3)
     switch (randomNumber) {
@@ -15,6 +20,17 @@ function getComputerChoice() {
             return 'scissors'
     }
 }
+
+let startButton = document.querySelector('.start');
+startButton.addEventListener('click', () => {
+    startSound.play();
+    let myPage = document.querySelector('.start-game');
+    myPage.classList.add('hide');
+    
+    let gamePage = document.querySelector('.main');
+    gamePage.classList.remove('hide');
+})
+
 
 function play(pc, user) {
 
@@ -49,36 +65,14 @@ function play(pc, user) {
     }
 
     if (computerWins == 3) {
-        let main = document.querySelector(".main");
-        main.classList.add('hide');
-
-        let newPage = document.querySelector('#results-page');
-        newPage.textContent = 'You lose 💔';
-        newPage.classList.remove('hide');
-        newPage.classList.add('show');
-
-        let button = document.createElement('button');
-        button.innerHTML = "Try Again";
-        button.onclick="window.location.reload();"
-        button.classList.add("restart-button")
-        newPage.appendChild(button);
+        window.location.href = './loser.html';
+        awwwSound.play();
     }
 
     else if (userWin == 3) {
-        let main = document.querySelector(".main");
-        main.classList.add('hide');
+        window.location.href = './winner.html';
+        clapAudio.play();
 
-        let newPage = document.querySelector('#results-page');
-        newPage.textContent = 'You win 🥳';
-        newPage.classList.remove('hide');
-        newPage.classList.add('show');
-
-        let button = document.createElement('button');
-        button.innerHTML = "Play Again";
-        button.onclick="window.location.reload();"
-        button.classList.add("restart-button")
-        newPage.appendChild(button);
-        
     }
 
 }
@@ -86,12 +80,14 @@ function play(pc, user) {
 let rockClick = document.querySelector('#rock');
 rockClick.addEventListener('click', () => {
     playerChoice = 'rock';
+    selectSound.play();
     play();
 });
 
 let paperClick = document.querySelector('#paper');
 paperClick.addEventListener('click', () => {
     playerChoice = 'paper';
+    selectSound.play();
     play();
 
 });
@@ -99,6 +95,7 @@ paperClick.addEventListener('click', () => {
 let scissorsClick = document.querySelector('#scissors');
 scissorsClick.addEventListener('click', () => {
     playerChoice = 'scissors';
+    selectSound.play();
     play();
 });
 
