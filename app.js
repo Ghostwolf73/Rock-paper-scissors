@@ -64,12 +64,12 @@ function play(pc, user) {
         resultTest.textContent = 'Draw';
     }
 
-    if (computerWins == 3) {
+    if (computerWins == 4) {
         window.location.href = './loser.html';
         awwwSound.play();
     }
 
-    else if (userWin == 3) {
+    else if (userWin == 4) {
         window.location.href = './winner.html';
         clapAudio.play();
 
